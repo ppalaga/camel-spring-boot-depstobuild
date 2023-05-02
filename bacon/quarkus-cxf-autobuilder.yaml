@@ -2,8 +2,8 @@ dependencyResolutionConfig:
     analyzeBOM: io.quarkiverse.cxf:quarkus-cxf-bom:1.5.14
     includeOptionalDependencies: true
     includeArtifacts:
-        - com.fasterxml.woodstox:woodstox-core:*
-#        - io.quarkiverse.xmlsec:quarkus-xmlsec-deployment:*
+        - io.quarkiverse.xmlsec:quarkus-xmlsec-deployment:*
+#        - com.fasterxml.woodstox:woodstox-core:*
 #        - io.quarkiverse.cxf:quarkus-cxf-deployment:*
 #        - io.quarkiverse.cxf:quarkus-cxf-rt-features-logging-deployment:*
 #        - io.quarkiverse.cxf:quarkus-cxf-rt-ws-security-deployment:*
@@ -11,6 +11,8 @@ dependencyResolutionConfig:
 #        - io.quarkiverse.cxf:quarkus-cxf-services-sts-deployment:*
 #        - io.quarkiverse.cxf:quarkus-cxf-woodstox-deployment:*
 #        - io.quarkiverse.cxf:quarkus-cxf-xjc-plugins-deployment:*
+    excludeArtifacts:
+        - io.quarkus:*:*
     recipeRepos:
         - https://github.com/redhat-appstudio/jvm-build-data
         - https://github.com/jboss-fuse/camel-spring-boot-depstobuild
