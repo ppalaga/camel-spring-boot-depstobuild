@@ -2,17 +2,21 @@ dependencyResolutionConfig:
     analyzeBOM: io.quarkiverse.cxf:quarkus-cxf-bom:1.5.14
     includeOptionalDependencies: true
     includeArtifacts:
-        - io.quarkiverse.xmlsec:quarkus-xmlsec-deployment:*
-#        - com.fasterxml.woodstox:woodstox-core:*
-#        - io.quarkiverse.cxf:quarkus-cxf-deployment:*
-#        - io.quarkiverse.cxf:quarkus-cxf-rt-features-logging-deployment:*
-#        - io.quarkiverse.cxf:quarkus-cxf-rt-ws-security-deployment:*
-#        - io.quarkiverse.cxf:quarkus-cxf-saaj-deployment:*
-#        - io.quarkiverse.cxf:quarkus-cxf-services-sts-deployment:*
-#        - io.quarkiverse.cxf:quarkus-cxf-woodstox-deployment:*
-#        - io.quarkiverse.cxf:quarkus-cxf-xjc-plugins-deployment:*
+        - io.quarkiverse.cxf:quarkus-cxf-deployment:*
+        - io.quarkiverse.cxf:quarkus-cxf-rt-features-logging-deployment:*
+        - io.quarkiverse.cxf:quarkus-cxf-rt-ws-security-deployment:*
+        - io.quarkiverse.cxf:quarkus-cxf-saaj-deployment:*
+        - io.quarkiverse.cxf:quarkus-cxf-services-sts-deployment:*
+        - io.quarkiverse.cxf:quarkus-cxf-woodstox-deployment:*
+        - io.quarkiverse.cxf:quarkus-cxf-xjc-plugins-deployment:*
     excludeArtifacts:
+        # built by Quarkus team
         - io.quarkus:*:*
+        # built together with Camel
+        - org.apache.cxf:*:*
+        - org.apache.cxf.services.sts:*:*
+        # An old Ant project, so better reuse the old build available in PNC
+        - wsdl4j:wsdl4j:*
     recipeRepos:
         - https://github.com/redhat-appstudio/jvm-build-data
         - https://github.com/jboss-fuse/camel-spring-boot-depstobuild
