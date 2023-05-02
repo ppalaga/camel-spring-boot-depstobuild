@@ -1,0 +1,58 @@
+dependencyResolutionConfig:
+    analyzeBOM: io.quarkiverse.cxf:quarkus-cxf-bom:1.5.14
+    includeOptionalDependencies: true
+    includeArtifacts:
+        - com.fasterxml.woodstox:woodstox-core:*
+#        - io.quarkiverse.xmlsec:quarkus-xmlsec-deployment:*
+#        - io.quarkiverse.cxf:quarkus-cxf-deployment:*
+#        - io.quarkiverse.cxf:quarkus-cxf-rt-features-logging-deployment:*
+#        - io.quarkiverse.cxf:quarkus-cxf-rt-ws-security-deployment:*
+#        - io.quarkiverse.cxf:quarkus-cxf-saaj-deployment:*
+#        - io.quarkiverse.cxf:quarkus-cxf-services-sts-deployment:*
+#        - io.quarkiverse.cxf:quarkus-cxf-woodstox-deployment:*
+#        - io.quarkiverse.cxf:quarkus-cxf-xjc-plugins-deployment:*
+    recipeRepos:
+        - https://github.com/redhat-appstudio/jvm-build-data
+        - https://github.com/jboss-fuse/camel-spring-boot-depstobuild
+
+buildConfigGeneratorConfig:
+    defaultValues:
+        environmentName: "OpenJDK 11.0; Mvn 3.5.4"
+    failGeneratedBuildScript: false
+    scmReplaceWithPlaceholder:
+        - "forge.fusesource.com/mvnplugins.git"
+        - "google-maven-repository.googlecode.com/svn"
+        - "svn.apache.org"
+        - "github.com/sonatype/jvnet-parent"
+        - "code.google.com/p"
+
+    scmPattern:
+        "git@github.com:": "https://github.com/"
+    scmMapping:
+        "github.com/sonatype/jvnet-parent": "https://github.com/sonatype/oss-parents"
+
+    pigTemplate:
+        product:
+            name: Camel Extensions for Quarkus Third Party Components
+            abbreviation: quarkus-cxf-third-party
+            stage: GA
+            issueTrackerUrl: https://issues.redhat.com/projects/CEQ
+        version: 2.13.3
+        milestone: CR2
+        group: CXF Extensions for Quarkus Third Party Components
+        builds:
+            -
+        flow:
+            licensesGeneration:
+                strategy: IGNORE
+            repositoryGeneration:
+                strategy: IGNORE
+            javadocGeneration:
+                strategy: IGNORE
+            sourcesGeneration:
+                strategy: IGNORE
+        outputPrefixes:
+            releaseFile: ab-example
+            releaseDir: ab-example
+        addons:
+            notYetAlignedFromDependencyTree:
