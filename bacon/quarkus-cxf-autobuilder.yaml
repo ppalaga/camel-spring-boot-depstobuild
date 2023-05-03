@@ -17,6 +17,9 @@ dependencyResolutionConfig:
         - org.apache.cxf.services.sts:*:*
         # An old Ant project, so better reuse the old build available in PNC
         - wsdl4j:wsdl4j:*
+        # Skipping this build time dependency for now as Peter was not able to figure out how to build it quickly enough
+        - org.apache.cxf.xjcplugins:*:*
+        - org.apache.cxf.xjc-utils:*:*
     recipeRepos:
         - https://github.com/redhat-appstudio/jvm-build-data
         - https://github.com/jboss-fuse/camel-spring-boot-depstobuild
