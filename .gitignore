@@ -5,6 +5,8 @@ deps-to-build.txt
 deps-to-build-csb.txt
 deps-to-build-camel.txt
 
+.bacon/
+
 # Compiled class file
 *.class
 
