@@ -1,0 +1,64 @@
+dependencyResolutionConfig:
+    analyzeBOM: io.quarkiverse.cxf:quarkus-cxf-bom:2.2.7
+    includeOptionalDependencies: true
+    includeArtifacts:
+        - io.quarkiverse.cxf:quarkus-cxf-deployment:*
+        - io.quarkiverse.cxf:quarkus-cxf-rt-features-logging-deployment:*
+        - io.quarkiverse.cxf:quarkus-cxf-rt-ws-security-deployment:*
+        - io.quarkiverse.cxf:quarkus-cxf-saaj-deployment:*
+        - io.quarkiverse.cxf:quarkus-cxf-services-sts-deployment:*
+        - io.quarkiverse.cxf:quarkus-cxf-woodstox-deployment:*
+        - io.quarkiverse.cxf:quarkus-cxf-xjc-plugins-deployment:*
+    excludeArtifacts:
+        # built by Quarkus team
+        - io.quarkus:*:*
+        # built together with Camel
+        - org.apache.cxf:*:*
+        - org.apache.cxf.services.sts:*:*
+        # An old Ant project, so better reuse the old build available in PNC
+        - wsdl4j:wsdl4j:*
+    recipeRepos:
+        - https://github.com/redhat-appstudio/jvm-build-data
+        - https://github.com/jboss-fuse/camel-spring-boot-depstobuild
+
+buildConfigGeneratorConfig:
+    defaultValues:
+        environmentName: "OpenJDK 17.0; RHEL 8; Mvn 3.9.1"
+    failGeneratedBuildScript: false
+    scmReplaceWithPlaceholder:
+        - "forge.fusesource.com/mvnplugins.git"
+        - "google-maven-repository.googlecode.com/svn"
+        - "svn.apache.org"
+        - "github.com/sonatype/jvnet-parent"
+        - "code.google.com/p"
+
+    scmPattern:
+        "git@github.com:": "https://github.com/"
+    scmMapping:
+        "github.com/sonatype/jvnet-parent": "https://github.com/sonatype/oss-parents"
+
+    pigTemplate:
+        product:
+            name: Camel Extensions for Quarkus Third Party Components
+            abbreviation: camel-quarkus
+            stage: GA
+            issueTrackerUrl: https://issues.redhat.com/projects/CEQ
+        version: 2.2.7
+        milestone: CR1
+        group: Camel Extensions for Quarkus Third Party Components
+        builds:
+            -
+        flow:
+            licensesGeneration:
+                strategy: IGNORE
+            repositoryGeneration:
+                strategy: IGNORE
+            javadocGeneration:
+                strategy: IGNORE
+            sourcesGeneration:
+                strategy: IGNORE
+        outputPrefixes:
+            releaseFile: ab-example
+            releaseDir: ab-example
+        addons:
+            notYetAlignedFromDependencyTree:

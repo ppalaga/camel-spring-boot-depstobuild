@@ -1,0 +1,237 @@
+---
+product:
+  name: "Camel Extensions for Quarkus Third Party Components"
+  abbreviation: "camel-quarkus"
+  stage: "GA"
+  issueTrackerUrl: "https://issues.redhat.com/projects/CEQ"
+version: "2.2.7"
+milestone: "CR1"
+group: "Camel Extensions for Quarkus Third Party Components"
+defaultBuildParameters:
+  brewPullActive: false
+builds:
+- name: "com.sun.xml.bind-jaxb-bom-ext-4.0.3-AUTOBUILD"
+  project: "eclipse-ee4j-jaxb-ri"
+  buildScript: "# Autobuilder copied this Build Config from BC #10181 rev 2677024\n\
+    # This build configuration was modified by Autobuilder\nmvn '-f' 'jaxb-ri/pom.xml'\
+    \ -DaltDeploymentRepository=indy-mvn::${AProxDeployUrl} '-DskipTests' 'deploy'"
+  scmUrl: "https://github.com/eclipse-ee4j/jaxb-ri.git"
+  scmRevision: "4.0.3-RI"
+  environmentName: "OpenJDK 11.0; Mvn 3.6.3"
+  dependencies:
+  - "com.sun.istack-istack-commons-4.1.2-AUTOBUILD"
+  - "com.sun.xml.dtd-parser-dtd-parser-1.5.0-AUTOBUILD"
+  - "jakarta.activation-jakarta.activation-api-2.1.2-AUTOBUILD"
+  - "jakarta.xml.bind-jakarta.xml.bind-api-4.0.0-AUTOBUILD"
+  - "org.eclipse.angus-angus-activation-2.0.1-AUTOBUILD"
+  - "org.eclipse.ee4j-project-1.0.8-AUTOBUILD"
+  alignmentParameters:
+  - "--file=jaxb-ri/pom.xml"
+  brewPullActive: true
+  buildType: "MVN"
+- name: "commons-codec-commons-codec-1.16.0-AUTOBUILD"
+  project: "apache-commons-codec"
+  buildScript: "mvn '-DskipTests' '-DperformRelease' '-Drat.skip' 'deploy'"
+  scmUrl: "git+ssh://code.engineering.redhat.com/apache/commons-codec.git"
+  scmRevision: "rel/commons-codec-1.16.0"
+  environmentName: "OpenJDK 1.8; Mvn 3.6.3"
+  dependencies:
+  - "org.apache.commons-commons-parent-58-AUTOBUILD"
+  brewPullActive: false
+  buildType: "MVN"
+- name: "jakarta.annotation-jakarta.annotation-api-2.1.1-AUTOBUILD"
+  project: "eclipse-ee4j/common-annotations-api"
+  buildScript: "# Autobuilder copied this Build Config from BC #11369 rev 2677433\n\
+    # This build configuration was modified by Autobuilder\n# Autobuilder copied this\
+    \ Build Config from BC #8413 rev 2614087\nmvn -Dcopyright.ignoreyear=true source:jar\
+    \ clean -f api/pom.xml deploy -B dependency:tree"
+  scmUrl: "https://github.com/eclipse-ee4j/common-annotations-api.git"
+  scmRevision: "2.1.1.redhat"
+  environmentName: "OpenJDK 11.0; Mvn 3.6.3"
+  dependencies:
+  - "org.eclipse.ee4j-project-1.0.7-AUTOBUILD"
+  alignmentParameters:
+  - "-DexcludedScopes=compile,provided,runtime,test -DpluginOverride.*:*@*= -DrepoReportingRemoval=true\
+    \ -DprojectMetaSkip=true -DprojectSrcSkip=false -DversionOverride=2.1.1 -f api/pom.xml"
+  brewPullActive: false
+  buildType: "MVN"
+- name: "com.sun.istack-istack-commons-4.1.2-AUTOBUILD"
+  project: "eclipse-ee4j-jaxb-istack-commons"
+  buildScript: "# This build configuration was modified by Autobuilder\n# Autobuilder\
+    \ copied this Build Config from BC #11704 rev 2677011\nmvn -f istack-commons/pom.xml\
+    \  -DskipTests clean deploy -B dependency:tree -am source:jar"
+  scmUrl: "https://github.com/eclipse-ee4j/jaxb-istack-commons.git"
+  scmRevision: "4.1.2-redhat"
+  environmentName: "OpenJDK 11.0; Mvn 3.6.3"
+  dependencies:
+  - "org.eclipse.ee4j-project-1.0.7-AUTOBUILD"
+  alignmentParameters:
+  - "-DexcludedScopes=compile,provided,runtime,test -DpluginOverride.*:*@*= -DrepoReportingRemoval=true\
+    \ -DprojectMetaSkip=true -DversionOverride=4.1.2 --file=istack-commons/pom.xml"
+  brewPullActive: false
+  buildType: "MVN"
+- name: "com.sun.xml.dtd-parser-dtd-parser-1.5.0-AUTOBUILD"
+  project: "eclipse-ee4j-jaxb-dtd-parser"
+  buildScript: "# This build configuration was modified by Autobuilder\n# Autobuilder\
+    \ copied this Build Config from BC #8325 rev 2612050\nmvn '-f' 'dtd-parser/pom.xml'\
+    \ 'deploy'"
+  scmUrl: "https://github.com/eclipse-ee4j/jaxb-dtd-parser.git"
+  scmRevision: "1.5.0.redhat"
+  environmentName: "OpenJDK 11.0; Mvn 3.6.3"
+  dependencies:
+  - "org.eclipse.ee4j-project-1.0.7-AUTOBUILD"
+  alignmentParameters:
+  - "-DexcludedScopes=compile,provided,runtime,test -DpluginOverride.*:*@*= -DrepoReportingRemoval=true\
+    \ -DprojectMetaSkip=true -DprojectSrcSkip=false -DversionOverride=1.5.0 --file=dtd-parser/pom.xml"
+  brewPullActive: false
+  buildType: "MVN"
+- name: "jakarta.xml.bind-jakarta.xml.bind-api-4.0.0-AUTOBUILD"
+  project: "eclipse-ee4j-jaxb-api"
+  buildScript: "# This build configuration was modified by Autobuilder\n# Autobuilder\
+    \ copied this Build Config from BC #8489 rev 2616762\nmvn -DskipTests=true source:jar\
+    \ deploy"
+  scmUrl: "https://github.com/eclipse-ee4j/jaxb-api.git"
+  scmRevision: "e6b122694f5ae3c2a517abc57d830912dfa2dedf"
+  environmentName: "OpenJDK 11.0; Mvn 3.6.3"
+  dependencies:
+  - "org.eclipse.ee4j-project-1.0.7-AUTOBUILD"
+  alignmentParameters:
+  - "-DpluginOverride.*:*@*= -DrepoReportingRemoval=true -DprojectMetaSkip=true -DprojectSrcSkip=false\
+    \ -DversionOverride=4.0.0"
+  brewPullActive: false
+  buildType: "MVN"
+- name: "org.apache.commons-commons-parent-58-AUTOBUILD"
+  project: "apache-commons-parent"
+  buildScript: "# Autobuilder copied this Build Config from BC #11886 rev 2667808\n\
+    mvn '-Dadditionalparam=-Xdoclint:none' '-Drat.skip' 'deploy'"
+  scmUrl: "https://github.com/apache/commons-parent.git"
+  scmRevision: "rel/commons-parent-58"
+  environmentName: "OpenJDK 1.8; RHEL 8; Mvn 3.6.3; netty-tcnative"
+  dependencies:
+  - "org.apache-apache-29-AUTOBUILD"
+  - "org.junit-junit-bom-5.9.3-AUTOBUILD"
+  brewPullActive: false
+  buildType: "MVN"
+- name: "org.eclipse.angus-angus-activation-2.0.1-AUTOBUILD"
+  project: "eclipse-ee4j-angus-activation"
+  buildScript: "# This build configuration was modified by Autobuilder\n# Autobuilder\
+    \ copied this Build Config from BC #11185 rev 2659999\nmvn clean source:jar deploy"
+  scmUrl: "https://github.com/eclipse-ee4j/angus-activation.git"
+  scmRevision: "2.0.1.redhat"
+  description: "https://github.com/eclipse-ee4j/angus-activation.git"
+  environmentName: "OpenJDK 11.0; Mvn 3.6.3"
+  dependencies:
+  - "jakarta.activation-jakarta.activation-api-2.1.2-AUTOBUILD"
+  - "org.eclipse.ee4j-project-1.0.7-AUTOBUILD"
+  alignmentParameters:
+  - "-DexcludedScopes=compile,provided,runtime,test -DpluginOverride.*:*@*= -DrepoReportingRemoval=true\
+    \ -DprojectMetaSkip=true -DprojectSrcSkip=false -DversionOverride=2.0.1"
+  brewPullActive: false
+  buildType: "MVN"
+- name: "org.eclipse.ee4j-project-1.0.8-AUTOBUILD"
+  project: "eclipse-ee4j/ee4j"
+  buildScript: "# Autobuilder copied this Build Config from BC #12066 rev 2669906\n\
+    # This build configuration was modified by Autobuilder\n# Autobuilder copied this\
+    \ Build Config from BC #9785 rev 2657119\n# Autobuilder copied this Build Config\
+    \ from BC #9785 rev 2657038\n# Autobuilder copied this Build Config from BC #9785\
+    \ rev 2656846\n# Autobuilder copied this Build Config from BC #8359 rev 2612471\n\
+    cd parent && mvn deploy -Dcopyright.ignoreyear=true -Poss-release -Dgpg.skip=true"
+  scmUrl: "https://github.com/eclipse-ee4j/ee4j"
+  scmRevision: "1.0.8"
+  environmentName: "OpenJDK 11.0; Mvn 3.6.3"
+  alignmentParameters:
+  - "-f parent/pom.xml -Poss-release -Dgpg.skip=true"
+  brewPullActive: false
+  buildType: "MVN"
+- name: "jakarta.activation-jakarta.activation-api-2.1.2-AUTOBUILD"
+  project: "eclipse-ee4j-jaf"
+  buildScript: "# Autobuilder copied this Build Config from BC #12427 rev 2677951\n\
+    # This build configuration was modified by Autobuilder\n# Autobuilder copied this\
+    \ Build Config from BC #11186 rev 2660004\nmvn '-f' 'api/pom.xml' '-Dmaven.javadoc.skip=true'\
+    \ source:jar 'deploy'"
+  scmUrl: "https://github.com/eclipse-ee4j/jaf.git"
+  scmRevision: "2.1.2.redhat"
+  environmentName: "OpenJDK 11.0; Mvn 3.6.3"
+  dependencies:
+  - "org.eclipse.ee4j-project-1.0.7-AUTOBUILD"
+  alignmentParameters:
+  - "--file=api/pom.xml -DexcludedScopes=compile,provided,runtime,test -DpluginOverride.*:*@*=\
+    \ -DrepoReportingRemoval=true -DprojectMetaSkip=true -DprojectSrcSkip=false -DversionOverride=2.1.2"
+  brewPullActive: false
+  buildType: "MVN"
+- name: "org.apache-apache-29-AUTOBUILD"
+  project: "apache-maven-pom"
+  buildScript: "# Autobuilder copied this Build Config from BC #11574 rev 2663748\n\
+    mvn '-DperformRelease' 'deploy'"
+  scmUrl: "https://gitbox.apache.org/repos/asf/maven-apache-parent.git"
+  scmRevision: "apache-29"
+  environmentName: "OpenJDK 1.8; Mvn 3.3.9"
+  brewPullActive: false
+  buildType: "MVN"
+- name: "org.junit-junit-bom-5.9.3-AUTOBUILD"
+  project: "org.junit-junit-bom"
+  buildScript: "# This build configuration was modified by Autobuilder\n# Autobuilder\
+    \ copied this Build Config from BC #9505 rev 2662558\n# This script was autogenerated\n\
+    gradle publish -x test -x checkstyleMain -x checkstyleNohttp --stacktrace -x spotlessMiscCheck\
+    \ -x checkstyleTest -x checkstyleTestFixtures -x checkstyleMainRelease9 -x checkstyleJmh\
+    \ -x initializeSonatypeStagingRepository"
+  scmUrl: "https://github.com/junit-team/junit5"
+  scmRevision: "r5.9.3"
+  environmentName: "OpenJDK 11.0; Mvn 3.6.3; Gradle 7.2"
+  alignmentParameters:
+  - "-Dorg.gradle.java.home=/usr/lib/jvm/java-11-openjdk-11.0.18.0.10-2.el8_7.x86_64\
+    \ -DRepour_Java=11 -DoverrideTransitive=true"
+  brewPullActive: false
+  buildType: "GRADLE"
+- name: "org.eclipse.ee4j-project-1.0.7-AUTOBUILD"
+  project: "eclipse-ee4j/ee4j"
+  buildScript: "# Autobuilder copied this Build Config from BC #12840 rev 2677410\n\
+    # This build configuration was modified by Autobuilder\n# Autobuilder copied this\
+    \ Build Config from BC #9785 rev 2671577\n# Autobuilder copied this Build Config\
+    \ from BC #8359 rev 2612471\ncd parent && mvn deploy -Dcopyright.ignoreyear=true\
+    \ -Poss-release -Dgpg.skip=true"
+  scmUrl: "https://github.com/eclipse-ee4j/ee4j"
+  scmRevision: "1.0.7"
+  environmentName: "OpenJDK 11.0; Mvn 3.6.3"
+  alignmentParameters:
+  - "-f parent/pom.xml -Poss-release -Dgpg.skip=true"
+  brewPullActive: false
+  buildType: "MVN"
+outputPrefixes:
+  releaseFile: "ab-example"
+  releaseDir: "ab-example"
+flow:
+  licensesGeneration:
+    strategy: "IGNORE"
+  repositoryGeneration:
+    strategy: "IGNORE"
+    additionalArtifacts: []
+    externalAdditionalArtifacts: []
+    externalAdditionalConfigs: []
+    excludeArtifacts: []
+    sourceBuilds: []
+    excludeSourceBuilds: []
+    filterArtifacts: []
+    includeJavadoc: false
+    includeLicenses: false
+    includeMavenMetadata: false
+    ignored: []
+    stages: []
+    parameters: {}
+    steps: []
+  javadocGeneration:
+    strategy: "IGNORE"
+    sourceBuilds: []
+    customPmeParameters: []
+    alignmentParameters: []
+  sourcesGeneration:
+    strategy: "IGNORE"
+    sourceBuild: null
+    sourceArtifact: null
+    whitelistedArtifacts: []
+    additionalExternalSources: []
+    excludeSourceBuilds: []
+addons:
+  notYetAlignedFromDependencyTree: null
+draft: true
+
