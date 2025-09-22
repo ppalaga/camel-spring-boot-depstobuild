@@ -1,0 +1,8 @@
+---
+type: "git"
+uri: "https://github.com/apache/velocity-engine.git"
+tagMapping:
+  # Workaround bad <scm><tag> in some release versions - see https://issues.apache.org/jira/browse/VELOCITY-990
+  - pattern: (.*)
+    tag: $1
+
