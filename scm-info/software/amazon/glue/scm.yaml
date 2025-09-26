@@ -1,0 +1,6 @@
+---
+type: "git"
+uri: "https://github.com/awslabs/aws-glue-schema-registry.git"
+tagMapping:
+  - pattern: (.*)
+    tag: v$1
