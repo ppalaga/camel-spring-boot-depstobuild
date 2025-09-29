@@ -1,0 +1,6 @@
+---
+type: "git"
+uri: "https://gitlab.cee.redhat.com/pnc-workspace/Azure/azure-sdk-for-java"
+tagMapping:
+  - pattern: (.*)
+    tag: azure-storage-file-datalake_$1
