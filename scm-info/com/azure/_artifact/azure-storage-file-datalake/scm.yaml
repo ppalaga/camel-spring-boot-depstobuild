@@ -1,7 +1,6 @@
 ---
 type: "git"
 uri: "https://gitlab.cee.redhat.com/pnc-workspace/Azure/azure-sdk-for-java"
-path: "sdk/serialization/azure-xml"
 tagMapping:
   - pattern: (.*)
-    tag: azure-xml_$1
+    tag: azure-storage-file-datalake_$1

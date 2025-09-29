@@ -1,0 +1,6 @@
+---
+type: "git"
+uri: "https://github.com/apache/arrow-java"
+tagMapping:
+  - pattern: (.*)
+    tag: v$1

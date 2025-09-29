@@ -1,0 +1,6 @@
+---
+type: "git"
+uri: "https://github.com/jnr/jnr-constants.git"
+tagMapping:
+  - pattern: (.*)
+    tag: jnr-constants-$1
