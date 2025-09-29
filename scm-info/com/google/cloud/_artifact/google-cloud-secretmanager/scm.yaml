@@ -1,0 +1,6 @@
+---
+type: "git"
+uri: "https://github.com/googleapis/google-cloud-java.git"
+tagMapping:
+  - pattern: (.*)
+    tag: v$1

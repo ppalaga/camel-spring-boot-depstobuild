@@ -1,0 +1,6 @@
+---
+type: "git"
+uri: "https://github.com/jnr/jnr-posix.git"
+tagMapping:
+  - pattern: (.*)
+    tag: jnr-posix-$1

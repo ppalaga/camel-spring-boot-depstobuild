@@ -1,6 +1,7 @@
 ---
 type: "git"
 uri: "https://github.com/Azure/azure-sdk-for-java.git"
+path: "sdk/serialization/azure-xml"
 tagMapping:
   - pattern: (.*)
     tag: azure-xml_$1

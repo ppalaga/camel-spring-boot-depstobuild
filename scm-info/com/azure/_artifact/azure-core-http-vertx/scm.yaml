@@ -1,7 +1,7 @@
 ---
 type: "git"
 uri: "https://github.com/Azure/azure-sdk-for-java.git"
-path: "sdk/serialization/azure-json"
 tagMapping:
   - pattern: (.*)
-    tag: azure-json_$1
+    tag: azure-core-http-vertx_$1
+

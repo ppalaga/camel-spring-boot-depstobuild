@@ -1,0 +1,6 @@
+---
+type: "git"
+uri: "https://github.com/apache/arrow"
+tagMapping:
+  - pattern: (.*)
+    tag: apache-arrow-$1

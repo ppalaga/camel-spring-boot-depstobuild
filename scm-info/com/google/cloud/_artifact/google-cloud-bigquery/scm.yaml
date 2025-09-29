@@ -1,3 +1,6 @@
 ---
 type: "git"
 uri: "https://github.com/googleapis/java-bigquery.git"
+tagMapping:
+  - pattern: (.*)
+    tag: v$1

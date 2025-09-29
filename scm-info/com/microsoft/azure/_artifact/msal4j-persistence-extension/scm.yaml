@@ -1,0 +1,6 @@
+---
+type: "git"
+uri: "https://github.com/AzureAD/microsoft-authentication-library-for-java.git"
+tagMapping:
+  - pattern: (.*)
+    tag: v$1

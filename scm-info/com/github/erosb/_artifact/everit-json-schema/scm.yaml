@@ -1,0 +1,6 @@
+---
+type: "git"
+uri: "https://github.com/everit-org/json-schema.git"
+tagMapping:
+  - pattern: (.*)
+    tag: v$1
