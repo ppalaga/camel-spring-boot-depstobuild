@@ -1,6 +1,7 @@
 ---
 type: "git"
 uri: "https://github.com/Azure/azure-sdk-for-java.git"
+path: "sdk/keyvault/azure-security-keyvault-secrets"
 tagMapping:
   - pattern: (.*)
     tag: azure-security-keyvault-secrets_$1

@@ -1,6 +1,7 @@
 ---
 type: "git"
 uri: "https://github.com/Azure/azure-sdk-for-java.git"
+path: "sdk/identity/azure-identity"
 tagMapping:
   - pattern: (.*)
     tag: azure-identity_$1
