@@ -1,6 +1,7 @@
 ---
 type: "git"
 uri: "https://gitlab.cee.redhat.com/pnc-workspace/Azure/azure-sdk-for-java"
+path: "sdk/identity/azure-identity"
 tagMapping:
   - pattern: (.*)
     tag: azure-identity_$1

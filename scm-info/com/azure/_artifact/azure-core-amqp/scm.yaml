@@ -1,6 +1,7 @@
 ---
 type: "git"
 uri: "https://gitlab.cee.redhat.com/pnc-workspace/Azure/azure-sdk-for-java"
+path: "sdk/core/azure-core-amqp"
 tagMapping:
   - pattern: (.*)
     tag: azure-core-amqp_$1
