@@ -1,7 +1,7 @@
 ---
 type: "git"
 uri: "https://github.com/Azure/azure-sdk-for-java.git"
+path: "sdk/core/azure-core"
 tagMapping:
   - pattern: (.*)
     tag: azure-core_$1
-

@@ -1,6 +1,7 @@
 ---
 type: "git"
 uri: "https://github.com/Azure/azure-sdk-for-java.git"
+path: "sdk/boms/azure-sdk-bom"
 tagMapping:
   - pattern: (.*)
     tag: azure-sdk-bom_$1
