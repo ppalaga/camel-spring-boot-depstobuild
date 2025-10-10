@@ -1,0 +1,10 @@
+---
+type: "git"
+uri: "https://github.com/Azure/azure-sdk-for-java.git"
+path: "build with -f pom.data.xml"
+tagMapping:
+  # see https://github.com/Azure/azure-sdk-for-java/issues/46906
+  - pattern: '1\.3\.0'
+    tag: d93d1050c80b7a0cf6831312602f9e4a7a4b6916
+  - pattern: '(.*)'
+    tag: 'find-the-right-commit-for-$1-manually'

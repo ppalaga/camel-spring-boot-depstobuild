@@ -1,6 +1,15 @@
 ---
 type: "git"
 uri: "https://github.com/Azure/azure-sdk-for-java.git"
+path: "build with -f pom.client.xml"
 tagMapping:
-  - pattern: (.*)
-    tag: main
+  # See https://github.com/Azure/azure-sdk-for-java/issues/46906
+  # where we propose d93d1050c80b7a0cf6831312602f9e4a7a4b6916
+  # However 84791c4238781cfe5a805a3e50645af98ab2eaee was used as a base
+  # for Tom's manual build 1.7.0.redhat-00002
+  # and that one has newer compiler (that azure-identity requires)
+  # and a bunch of other plugins.
+  - pattern: '1\.7\.0'
+    tag: 84791c4238781cfe5a805a3e50645af98ab2eaee
+  - pattern: '(.*)'
+    tag: 'find-the-right-commit-for-$1-manually'
