@@ -3,4 +3,6 @@ type: "git"
 uri: "https://github.com/Azure/azure-sdk-for-java.git"
 tagMapping:
   - pattern: (.*)
+    tag: com.azure+azure-storage-blob-changefeed_$1
+  - pattern: (.*)
     tag: azure-storage-blob-changefeed_$1

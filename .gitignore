@@ -5,6 +5,8 @@ deps-to-build.txt
 deps-to-build-csb.txt
 deps-to-build-camel.txt
 
+.DS_Store
+ 
 # Compiled class file
 *.class
 
